@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>创建Vue对象</title>
+    <title>数据绑定</title>
     <script type="text/javascript" src="../js/vue.js"></script>
   </head>
     
   <body> 
     <div id="root">
-      <h1>hello, {{name}}</h1>
+      单向数据绑定：<input type="text" :value='name'><br>
+      单向数据绑定：<input type="text" v-model:value='name'>
     </div>
 
     <script type="text/javascript">
@@ -22,4 +23,3 @@
     </script>
   </body>
 </html>
-

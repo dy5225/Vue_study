@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>插值语法</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>指令语法</h1>
+    <h1>Hello, {{name}}</h1>
+    <a v-bind:href="school.url.toUpperCase()">百度一下,{{school.name}}</a>
+    <a :href="school.url">百度一下,{{school.name}}就知道</a>
+  </div>
+  <script>
+    Vue.config.productionTip = false
+
+    new Vue({
+      el: '#app',
+      data: {
+        name: '张三',
+        school: {
+          name: 'lisi',
+          url: "https://www.baidu.com"
+        }
+      }
+    })
+  </script>
+</body>
+</html>
