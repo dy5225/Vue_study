@@ -14,7 +14,7 @@
         删除 => delete(捕获"删除"和“退格”键)
         退出 => esc
         空格 => space
-        换行 => tab
+        换行 => tab （特殊，必须配合keydown使用）
         上 => up
         下 => down
         左 => left
@@ -33,10 +33,13 @@
   <div id="app">
     <h1>欢迎{{name}}来到world世界</h1>
     <!-- keydown-按下触发   keyup-放开触发  -->
-    <input type="text" placeholder="按下回车提示输入" @keyup="showInfo">
+    <input type="text" placeholder="按下回车提示输入" @keyup.delete="showInfo">
   </div>
   <script type="text/javascript">
     Vue.config.productionTip = false
+    // Vue自定义键盘按键事件
+    Vue.config.keyCodes.huiche = 13
+    
     new Vue({
       el: '#app',
       data: {
@@ -44,9 +47,10 @@
       },
       methods:{
         showInfo(e){
-          console.log(e.keyCode);
+          // console.log(e.keyCode);  //按键编码
+          console.log(e.key);   // 按键名称
           // if(e.keyCode !== 13) return
-          // console.log(e.target.value);
+          console.log(e.target.value);
         }
       }
     })
