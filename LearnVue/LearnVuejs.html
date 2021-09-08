@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Vue</title>
-  <script src="../js/vue.js"></script>
+  <script type="text/javascript" src="../js/vue.js"></script>
 </head>
 
 <body>
   <div id="app">
-   
+    <h1>欢迎{{name}}来到world世界</h1>
   </div>
   <script type="text/javascript">
     Vue.config.productionTip = false
     new Vue({
       el: '#app',
       data: {
-
+        name: '雪落'
       }
     })
   </script>
