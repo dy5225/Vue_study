@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>事件处理</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h1>欢迎{{name}}</h1>
+    <button v-on:click="open1">点击提交1</button>
+    <button @click="open2($event, 55)">点击提交2</button>
+  </div>
+  <script type="text/javascript">
+    Vue.config.productionTip = false
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        name: '张三',
+        age: 18
+      },
+      methods: {
+        open1(){
+          alert("点击提交1！！")
+        },
+        open2(event, value){
+          vm.age = value
+        }
+      },
+
+    })
+  </script>
+</body>
+
+</html>
+
