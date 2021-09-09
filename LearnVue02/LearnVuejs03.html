@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性实现</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    姓：<input type="text" v-model:value="firstName"> <br/>
+    名：<input type="text" v-model:value="lastName">  <br/>
+    姓名： <span> {{fullName}}</span>
+  </div>
+  <script type="text/javascript">
+    Vue.config.productionTip = false
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        firstName: '雪',
+        lastName: '落'
+      },
+      computed:{  // 有缓存
+          fullName:{
+            get(){
+              console.log("get被调用了");
+              return this.firstName + '-' + this.lastName
+            },
+            // 修改的时候调用 
+            set(value){
+              console.log(value);
+              const arr = value.split('-')
+              this.firstName = arr[0]
+              this.lastName = arr[1]
+            }
+          }
+      }
+    })
+  </script>
+</body>
+
+</html>
+

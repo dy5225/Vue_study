@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>插值语法实现</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    姓：<input type="text" v-model:value="firstName"> <br/>
+    名：<input type="text" v-model:value="lastName">  <br/>
+    <span>姓名： {{firstName}}-{{lastName}}</span>
+  </div>
+  <script type="text/javascript">
+    Vue.config.productionTip = false
+    new Vue({
+      el: '#app',
+      data: {
+        firstName: '雪',
+        lastName: '落'
+      }
+    })
+  </script>
+</body>
+
+</html>
+
