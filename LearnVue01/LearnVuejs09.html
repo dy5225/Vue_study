@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>事件补充</title>
+  <script type="text/javascript" src="../js/vue.js"></script>
+  <style>
+    .box{
+      height: 50px;
+      background-color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1>欢迎{{name}}来到world世界</h1>
+    <!-- 修饰符可以连续写   @click.stop.prevent  -->
+    <div class="box" @click="showInfo">
+      <a href="https://www.baidu.com" @click.stop.prevent="showInfo">百度一下，你就知道！</a>
+    </div>
+  </div>
+  <script type="text/javascript">
+    Vue.config.productionTip = false
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        name: '雪落'
+      },
+      methods: {
+        showInfo(){
+          alert("你好，"+ vm.name);
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>
+

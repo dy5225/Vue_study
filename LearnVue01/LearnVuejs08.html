@@ -25,6 +25,7 @@
       3.系统修饰键（用法特殊）：ctrl、alt、shift、meta
         (1) 配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，时间才被触发；
         (2) 配合keydown使用：正常触发时间
+        (3) 组合使用ctrl+d，可以在@keyup.ctrl后面再接  .y @keyup.ctrl.y
 
       4.也可以试用keyCode去指定具体的安检（不推荐）
 
@@ -32,7 +33,7 @@
    -->
   <div id="app">
     <h1>欢迎{{name}}来到world世界</h1>
-    <!-- keydown-按下触发   keyup-放开触发  -->
+    <!-- keydown-按下触发   *keyup-放开触发  -->
     <input type="text" placeholder="按下回车提示输入" @keyup.delete="showInfo">
   </div>
   <script type="text/javascript">
